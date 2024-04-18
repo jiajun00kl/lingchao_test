@@ -1,0 +1,54 @@
+sku:
+  CreatedBy: 24040
+  UpdatedBy: 24040
+  attrs_json: null
+  bar_code: '210204601003301'
+  bit_tag: 0
+  business_type: 1
+  combineItemModule: null
+  cost_price: !!python/object/apply:decimal.Decimal
+  - '22.600000000'
+  cost_price_before_modify: !!python/object/apply:decimal.Decimal
+  - 0E-9
+  cost_price_exclusive: !!python/object/apply:decimal.Decimal
+  - 0E-9
+  createdAt: 2023-03-13 09:55:13
+  deletedAt: 0
+  extension_type: null
+  extra_json: '{"unit":"个","unitQuantity":"1"}'
+  guide_price: null
+  id: 210204601003301
+  image: http://lcscm-trantor.oss-cn-shenzhen.aliyuncs.com/images/manage/2046/46a23c6a-07bf-45fc-8d23-078dab8a0855/c0d8878a-6874-43b7-a41e-a7a7f9bdcdbd.jpg
+  isDeleted: 0
+  item_id: 210204601003301
+  item_markup_rate: '0.1000'
+  modify_price_id: null
+  modify_version: null
+  name: 立邦 斜纹定位器
+  old_cost_price: !!python/object/apply:decimal.Decimal
+  - '22.600000000'
+  old_item_markup_rate: '0.2000'
+  original_price: !!python/object/apply:decimal.Decimal
+  - 0E-9
+  outer_id: null
+  price: !!python/object/apply:decimal.Decimal
+  - '24.860000000'
+  price_desc: null
+  price_exclusive: null
+  price_json: null
+  price_plan_code: null
+  range_price_json: '[{"itemMarkupRate":"0.1673","subsidyPrice":26.38,"minOrderNum":400,"useStatus":true}]'
+  sales_benchmark_price: !!python/object/apply:decimal.Decimal
+  - '27.120000000'
+  seller_id: 1000002046
+  show_price: null
+  sku_code: '210204601003301'
+  sku_ids_json: null
+  sku_template_id: null
+  status: 1
+  tax_rate: !!python/object/apply:decimal.Decimal
+  - '13.0000'
+  tenant_id: 1
+  type: 1
+  updatedAt: 2023-03-13 09:55:13
+  version: 0

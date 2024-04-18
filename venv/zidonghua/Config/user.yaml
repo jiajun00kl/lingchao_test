@@ -1,0 +1,31 @@
+user:
+  CreatedBy: null
+  UpdatedBy: 10
+  avatar: null
+  channel: null
+  channel_type: out_user
+  createdAt: 2023-06-30 14:25:07
+  deletedAt: 0
+  email: 123@1523.com
+  enabled: 1
+  extra: null
+  id: 132016
+  invitation_code: null
+  isDeleted: 0
+  last_login_at: 2024-03-26 17:51:45
+  locked: 0
+  mobile: '18178952878'
+  mobile_prefix: '86'
+  nickname: test熊
+  password: 6897@02839a827eaae5c96ebb
+  pk: 1674665349871693824
+  pwd_expire_at: 2123-06-30 14:25:07
+  record_create_msg: 1
+  record_update_msg: 0
+  source: null
+  source_type: null
+  tag: null
+  tenant_id: 1
+  updatedAt: 2024-03-26 17:51:45
+  username: u561119772315
+  version: null

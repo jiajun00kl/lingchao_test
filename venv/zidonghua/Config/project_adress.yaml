@@ -1,0 +1,11 @@
+project_adress:
+  CreatedBy: 132016
+  UpdatedBy: 132016
+  address: '{"address":[{"id":"110000","name":"北京"},{"id":"110100","name":"北京市"},{"id":"110102","name":"西城区"}],"city":{"$ref":"$.address[1]"},"detail":"1111111111111","province":{"$ref":"$.address[0]"},"region":{"$ref":"$.address[2]"}}'
+  createdAt: 2023-09-13 18:57:40
+  deletedAt: 0
+  id: 20012
+  isDeleted: 0
+  partner_center_project_id: 100023
+  type: '1'
+  updatedAt: 2023-09-13 18:57:46

@@ -1,0 +1,24 @@
+invoice_info:
+- CreatedBy: null
+  UpdatedBy: null
+  bank_type: null
+  createdAt: 2024-03-20 15:13:07
+  deletedAt: 0
+  id: 250006
+  invoice_account: '622878272262673834223'
+  invoice_address: 深圳宝安区宝安大道108号哈哈锁厂
+  invoice_bank: 中国邮政深圳分行龙华支行
+  invoice_company: 湖北家家有限公司
+  invoice_mobile: '18178952878'
+  invoice_personal: null
+  invoice_type: ALL_ELE_SPECIAL
+  isDeleted: 0
+  need_invoice: 1
+  recipient_address: 123@136.com
+  recipient_name: 李四测试
+  recipient_phone: '18178952878'
+  taxpayer_code: '914200001776058818'
+  title: 湖北家家有限公司
+  title_type: COMPANY
+  updatedAt: 2024-03-20 16:59:33
+  uscc: '914200001776058818'

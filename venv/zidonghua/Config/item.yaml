@@ -1,0 +1,79 @@
+item:
+  CreatedBy: 24040
+  UpdatedBy: 36068
+  advertise: null
+  ask_price_id: null
+  audit_by: 10
+  audit_status: 2
+  audit_time: null
+  bit_tag: 0
+  brand_id: 50001
+  brand_name: 立邦
+  business_type: 1
+  category_id: 5147
+  combine_item_template: null
+  contract_code: f0cdc16c581d1
+  contract_id: 158001
+  contract_name: 哈哈-立邦-合同01号
+  createdAt: 2023-03-13 09:55:12
+  deletedAt: 0
+  delivery_fee_factor: null
+  delivery_fee_temp_id: null
+  digitalStatus: -1
+  digitalSyncError: null
+  digitalSyncStatus: default
+  expand_field: null
+  extension_type: null
+  extra_json: '{"taxRate":"13","mainImage":"{\"files\":[{\"name\":\"企业微信截图_20230711094037.png\",\"type\":\"png\",\"url\":\"https://lcscm-trantor-test.oss-cn-shenzhen.aliyuncs.com/trantor/gallery/Goods/企业微信截图_20230711094037.png\"},{\"name\":\"验收\",\"type\":\"png\",\"url\":\"https://lcscm-trantor-test.oss-cn-shenzhen.aliyuncs.com/images/manage/1000001/e77dfd97-bfec-43d6-819d-3f47f516b5f3/410bfa17-fe7b-4b3f-beaf-13374d9c9a55验收.png\"}]}","supplyPurchaser":"[0]","categoryList":"[4797,4804,4839,4949,5147]"}'
+  id: 210204601003301
+  install_fee_factor: null
+  install_fee_temp_id: null
+  invoice_category_code: '107020801'
+  invoice_category_name: 立邦
+  isDeleted: 0
+  isSpecialItem: 0
+  isSyncDigital: 0
+  itemModelAttachment: null
+  item_chartlet: null
+  item_code: '210204601003301'
+  item_level: S
+  item_model: null
+  item_source: 深圳哈哈有限公司
+  lead_trend_yn: 1
+  main_image: http://lcscm-trantor.oss-cn-shenzhen.aliyuncs.com/images/manage/2046/46a23c6a-07bf-45fc-8d23-078dab8a0855/c0d8878a-6874-43b7-a41e-a7a7f9bdcdbd.jpg
+  md5_info: 9741721ae6188dd82244e4568ff84275
+  min_order_number: 1
+  name: 立邦 斜纹定位器
+  nippon_relation_item_code: null
+  origin_place: null
+  other_attributes_json: null
+  outer_id: null
+  overdue_date: 2024-08-30 18:05:00
+  overdue_status: UNEXPIRED
+  platform_audit_status: AGREE
+  pre_overdue_date: 2023-12-31 09:56:00
+  price_adjust_yn: 0
+  purchaser_id: 0
+  quickOrder: 1
+  refuse_reason: null
+  remark: null
+  sale_scope: null
+  seller: 138017
+  seller_id: 138017
+  seller_name: 深圳哈哈有限公司
+  short_name: 立邦
+  show_virtual_price: NOT
+  sku_attributes_json: null
+  special_yn: 0
+  specification: 立邦地坪漆材料 ：ZF-F951-防静电的环保地坪漆
+  spu_id: null
+  standard: null
+  status: 1
+  supply_cycle: 10
+  tenant_id: 1
+  type: 1
+  unit: 个
+  updatedAt: 2023-08-21 16:23:10
+  version: 0
+  video_url: null
+  virtual_price: null

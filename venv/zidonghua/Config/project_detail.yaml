@@ -1,0 +1,364 @@
+project_detail:
+  address:
+    address:
+    - id: '110000'
+      name: 北京
+    - id: '110100'
+      name: 北京市
+    - id: '110102'
+      name: 西城区
+    city:
+      id: '110100'
+      name: 北京市
+    detail: '1111111111111'
+    province:
+      id: '110000'
+      name: 北京
+    region:
+      id: '110102'
+      name: 西城区
+  code: ZH20230704000001
+  corporateCompany:
+    address: 湖北武汉
+    authorization:
+    - authorization
+    batchNum: c77251bf4f96443bb111a6bc117f0d14
+    businessLicense:
+      files:
+      - name: 微信截图_20230703102935.png
+        type: png
+        url: //lcscm-trantor-test.oss-cn-shenzhen.aliyuncs.com/trantor/attachments/6686762b-71cd-4639-89ca-a054c2bd74de.png
+    companyCode: CO20230703000001
+    companyName: 湖北家家有限公司
+    contactMobile: '18178952878'
+    contactName: 李四测试
+    createdAt: 1688378589000
+    createdBy:
+      id: 132016
+    crmStatus: NOT_SETTLED
+    dataSource: LC
+    defaultCreateType: DEFAULT_CREATE_ENTERPRICE
+    enterpriseId: 138013
+    enterpriseName: 湖北家家有限公司
+    files: '11'
+    graphicSeal:
+      files:
+      - name: 微信截图_20230703102935.png
+        type: png
+        url: //lcscm-trantor-test.oss-cn-shenzhen.aliyuncs.com/trantor/attachments/00ff564d-e88b-44cd-a17e-96a57350be90.png
+    graphicSealValidPeriodEnd: 32503564800000
+    graphicSealValidPeriodStart: 1688378589000
+    id: 108009
+    invoiceInfo:
+      createdAt: 1703733276000
+      createdBy: {}
+      id: 218003
+      invoiceAccount: '622878272262673834223'
+      invoiceAddress: 深圳宝安区宝安大道108号哈哈锁厂
+      invoiceBank: 中国邮政深圳分行龙华支行
+      invoiceCompany: 湖北家家有限公司
+      invoiceMobile: '18178952878'
+      invoiceType: ALL_ELE_SPECIAL
+      isDeleted: false
+      needInvoice: true
+      recipientAddress: 123@136.com
+      recipientName: 李四测试
+      recipientPhone: '18178952878'
+      taxpayerCode: '914200001776058818'
+      title: 湖北家家有限公司
+      titleType: COMPANY
+      updatedAt: 1703842568000
+      updatedBy:
+        id: 10
+      uscc: '914200001776058818'
+    isAvailable: true
+    isDeleted: false
+    isEffective: true
+    isManualEdit: false
+    isReEdit: false
+    legalRepresentativeName: 李四测试
+    source: PURCHASER
+    status: APPROVED
+    template: '11'
+    travellingTraderBankStatus: NOT_CREATED
+    travellingTraderStatus: NOT_CREATED
+    updatedAt: 1703842568000
+    updatedBy:
+      id: 10
+    uscc: '914200001776058818'
+  createdAt: 1688435357000
+  createdBy:
+    createdAt: 1688106308000
+    createdBy:
+      id: 132016
+    email: 123@1523.com
+    enabled: true
+    id: 132016
+    isDeleted: false
+    locked: false
+    mobile: '18178952878'
+    nickname: test熊
+    password: 6897@02839a827eaae5c96ebb
+    pwdExpireAt: 4843779907000
+    updatedAt: 1703230050000
+    updatedBy:
+      id: 10
+    username: u561119772315
+  customerPaymentCycle: 30
+  defaultCreateType: NOT_DEFAULT
+  id: 100023
+  invoiceRemark: '444444444444444444444444444444444444444444444444444'
+  isAvailable: true
+  isDeleted: false
+  lcName: 领潮项目名称
+  name: test1采购项目
+  paymentRequest: 1
+  performanceHead:
+  - id: 210002
+    nickname: 履约测试
+  performanceProjectStatus: ICEBREAK
+  projectAddressList:
+  - address:
+      address:
+      - id: '110000'
+        name: 北京
+      - id: '110100'
+        name: 北京市
+      - id: '110102'
+        name: 西城区
+      city:
+        id: '110100'
+        name: 北京市
+      detail: '1111111111111'
+      province:
+        id: '110000'
+        name: 北京
+      region:
+        id: '110102'
+        name: 西城区
+    createdAt: 1694602660000
+    createdBy:
+      id: 132016
+    id: 20012
+    isDeleted: false
+    project:
+      address:
+        address:
+        - id: '110000'
+          name: 北京
+        - id: '110100'
+          name: 北京市
+        - id: '110102'
+          name: 西城区
+        city:
+          id: '110100'
+          name: 北京市
+        detail: '1111111111111'
+        province:
+          id: '110000'
+          name: 北京
+        region:
+          id: '110102'
+          name: 西城区
+      code: ZH20230704000001
+      createdAt: 1688435357000
+      createdBy:
+        id: 132016
+      customerPaymentCycle: 30
+      defaultCreateType: NOT_DEFAULT
+      id: 100023
+      invoiceRemark: '444444444444444444444444444444444444444444444444444'
+      isAvailable: true
+      isDeleted: false
+      lcName: 领潮项目名称
+      name: test1采购项目
+      paymentRequest: 1
+      performanceProjectStatus: ICEBREAK
+      purchaserId: 138013
+      source: PURCHASER
+      status: ENABLED
+      updatedAt: 1703842568000
+      updatedBy:
+        id: 10
+    type: '1'
+    updatedAt: 1694602666000
+    updatedBy:
+      id: 132016
+  - address:
+      address:
+      - id: '420000'
+        name: 湖北省
+      - id: '420100'
+        name: 武汉市
+      - id: '420103'
+        name: 江汉区
+      city:
+        id: '420100'
+        name: 武汉市
+      detail: 马路杀手二号
+      province:
+        id: '420000'
+        name: 湖北省
+      region:
+        id: '420103'
+        name: 江汉区
+    createdAt: 1692683174000
+    createdBy:
+      id: 132016
+    id: 2014
+    isDeleted: false
+    project:
+      address:
+        address:
+        - id: '110000'
+          name: 北京
+        - id: '110100'
+          name: 北京市
+        - id: '110102'
+          name: 西城区
+        city:
+          id: '110100'
+          name: 北京市
+        detail: '1111111111111'
+        province:
+          id: '110000'
+          name: 北京
+        region:
+          id: '110102'
+          name: 西城区
+      code: ZH20230704000001
+      createdAt: 1688435357000
+      createdBy:
+        id: 132016
+      customerPaymentCycle: 30
+      defaultCreateType: NOT_DEFAULT
+      id: 100023
+      invoiceRemark: '444444444444444444444444444444444444444444444444444'
+      isAvailable: true
+      isDeleted: false
+      lcName: 领潮项目名称
+      name: test1采购项目
+      paymentRequest: 1
+      performanceProjectStatus: ICEBREAK
+      purchaserId: 138013
+      source: PURCHASER
+      status: ENABLED
+      updatedAt: 1703842568000
+      updatedBy:
+        id: 10
+    type: '0'
+    updatedAt: 1694602666000
+    updatedBy:
+      id: 132016
+  - address:
+      address:
+      - id: '440000'
+        name: 广东省
+      - id: '440300'
+        name: 深圳市
+      - id: '440305'
+        name: 南山区
+      city:
+        id: '440300'
+        name: 深圳市
+      detail: 马路杀手1010号
+      province:
+        id: '440000'
+        name: 广东省
+      region:
+        id: '440305'
+        name: 南山区
+    createdAt: 1692683902000
+    createdBy:
+      id: 132016
+    id: 2016
+    isDeleted: false
+    project:
+      address:
+        address:
+        - id: '110000'
+          name: 北京
+        - id: '110100'
+          name: 北京市
+        - id: '110102'
+          name: 西城区
+        city:
+          id: '110100'
+          name: 北京市
+        detail: '1111111111111'
+        province:
+          id: '110000'
+          name: 北京
+        region:
+          id: '110102'
+          name: 西城区
+      code: ZH20230704000001
+      createdAt: 1688435357000
+      createdBy:
+        id: 132016
+      customerPaymentCycle: 30
+      defaultCreateType: NOT_DEFAULT
+      id: 100023
+      invoiceRemark: '444444444444444444444444444444444444444444444444444'
+      isAvailable: true
+      isDeleted: false
+      lcName: 领潮项目名称
+      name: test1采购项目
+      paymentRequest: 1
+      performanceProjectStatus: ICEBREAK
+      purchaserId: 138013
+      source: PURCHASER
+      status: ENABLED
+      updatedAt: 1703842568000
+      updatedBy:
+        id: 10
+    type: '0'
+    updatedAt: 1694602666000
+    updatedBy:
+      id: 132016
+  projectUserList:
+  - createdAt: 1694597375000
+    createdBy:
+      id: 132016
+    id: 128011
+    isDeleted: false
+    updatedAt: 1694597375000
+    updatedBy:
+      id: 132016
+    user:
+      createdAt: 1688106308000
+      createdBy: {}
+      email: 123@1523.com
+      enabled: true
+      id: 132016
+      isDeleted: false
+      locked: false
+      mobile: '18178952878'
+      nickname: test熊
+      password: 6897@02839a827eaae5c96ebb
+      pwdExpireAt: 4843779907000
+      updatedAt: 1703230050000
+      updatedBy:
+        id: 10
+      username: u561119772315
+  purchaserId: 138013
+  quotationHead:
+  - id: 204004
+    nickname: 刘禹
+  salesHead:
+  - id: 204004
+    nickname: 刘禹
+  salesSupport: []
+  source: PURCHASER
+  status: ENABLED
+  updatedAt: 1703842568000
+  updatedBy:
+    id: 10
+  userExtList:
+  - email: 123@1523.com
+    id: 132016
+    isContractorChinese: 否
+    locked: false
+    phone: '18178952878'
+    roleType: 采购商默认管理员
+    username: test熊

@@ -1,0 +1,32 @@
+project:
+  ContractProjectList: 226027
+  ContractProjectListCrm: null
+  CreatedBy: 132016
+  UpdatedBy: 10
+  address: '{"address":[{"id":"110000","name":"北京"},{"id":"110100","name":"北京市"},{"id":"110102","name":"西城区"}],"city":{"$ref":"$.address[1]"},"detail":"1111111111111","province":{"$ref":"$.address[0]"},"region":{"$ref":"$.address[2]"}}'
+  code: ZH20230704000001
+  corporate_company: 108009
+  createdAt: 2023-07-04 09:49:17
+  crm_ispreperformance: null
+  crm_project_id: null
+  crm_project_leader_id: null
+  crm_project_leader_name: null
+  crm_state_code: null
+  customer_payment_cycle: 30
+  defaultCreateType: NOT_DEFAULT
+  deletedAt: 0
+  id: 100023
+  invoice_email: null
+  invoice_remark: '444444444444444444444444444444444444444444444444444'
+  isAvailable: 1
+  isDeleted: 0
+  lc_name: lcCOBSCMMD20240131000020
+  name: test1采购项目
+  payment_request: 1
+  performance_project_status: DISCLOSED
+  purchaser_id: 138013
+  remark: null
+  settlement_status: null
+  source: PURCHASER
+  status: ENABLED
+  updatedAt: 2024-03-26 15:42:01

@@ -1,0 +1,125 @@
+payment:
+- ContractContractPaymentIterm: 124057
+  ContractContractPaymentItermCrm: null
+  CreatedBy: 10
+  UpdatedBy: 10
+  category: 4842
+  code: PI20230905000002
+  comment: test专用-接口专用
+  createdAt: 2023-12-26 16:10:34
+  deletedAt: null
+  describe: 需求单/订单/到货/安装/结算/质保 (10.00/10.00/30.00/30.00/10.00/10.00)
+  id: 224552
+  install_option: SUPPLY_INSTALL
+  invoicing_describe: 需求单/订单/到货/安装/结算/质保 (10.00/10.00/30.00/30.00/10.00/10.00/
+  isDefaultCreate: 0
+  isDeleted: 0
+  mdBrand_id: null
+  model_houses: null
+  name: test专用
+  origin_payment_group_id: 44002
+  origin_payment_iterm_id: 54002
+  radix: 100
+  sort: 171
+  status: ENABLE
+  supply_cycle_of_bulk_goods: null
+  supply_method: null
+  types: SALE
+  unloading_responsibility: null
+  updatedAt: 2024-01-12 10:46:26
+  warranty_period_first_date: null
+  warranty_period_first_str: null
+  warranty_period_first_type: null
+- ContractContractPaymentIterm: 124057
+  ContractContractPaymentItermCrm: null
+  CreatedBy: 10
+  UpdatedBy: 10
+  category: 5147
+  code: PI20230905000002
+  comment: test专用-接口专用
+  createdAt: 2023-12-26 16:10:34
+  deletedAt: null
+  describe: 需求单/订单/到货/安装/结算/质保 (10.00/10.00/30.00/30.00/10.00/10.00)
+  id: 224553
+  install_option: SUPPLY_INSTALL
+  invoicing_describe: 需求单/订单/到货/安装/结算/质保 (10.00/10.00/30.00/30.00/10.00/10.00/
+  isDefaultCreate: 0
+  isDeleted: 0
+  mdBrand_id: null
+  model_houses: null
+  name: test专用
+  origin_payment_group_id: 44002
+  origin_payment_iterm_id: 54002
+  radix: 100
+  sort: 171
+  status: ENABLE
+  supply_cycle_of_bulk_goods: null
+  supply_method: null
+  types: SALE
+  unloading_responsibility: null
+  updatedAt: 2024-01-12 10:56:18
+  warranty_period_first_date: null
+  warranty_period_first_str: null
+  warranty_period_first_type: null
+- ContractContractPaymentIterm: 124057
+  ContractContractPaymentItermCrm: null
+  CreatedBy: 10
+  UpdatedBy: 10
+  category: 5147
+  code: PI20210628000001
+  comment: 订单预付100%
+  createdAt: 2023-12-26 16:10:34
+  deletedAt: null
+  describe: 需求单/订单/到货/安装/结算/质保 (0.00/100.00/0.00/0.00/0.00/0.00)
+  id: 224554
+  install_option: ONLY_SUPPLY
+  invoicing_describe: 需求单/订单/到货/安装/结算/质保 (0.00/100.00/0.00/0.00/0.00/0.00/
+  isDefaultCreate: 0
+  isDeleted: 0
+  mdBrand_id: null
+  model_houses: null
+  name: 【PSL销售】订单预付100%
+  origin_payment_group_id: null
+  origin_payment_iterm_id: 1
+  radix: 100
+  sort: 2
+  status: ENABLE
+  supply_cycle_of_bulk_goods: null
+  supply_method: null
+  types: SALE
+  unloading_responsibility: null
+  updatedAt: 2024-01-12 10:56:18
+  warranty_period_first_date: null
+  warranty_period_first_str: null
+  warranty_period_first_type: null
+- ContractContractPaymentIterm: 124057
+  ContractContractPaymentItermCrm: null
+  CreatedBy: 10
+  UpdatedBy: 10
+  category: 4842
+  code: PI20220815000002
+  comment: 订单预付款100%
+  createdAt: 2023-12-26 16:10:34
+  deletedAt: null
+  describe: 需求单/订单/到货/安装/结算/质保 (0.00/100.00/0.00/0.00/0.00/0.00)
+  id: 224555
+  install_option: ONLY_SUPPLY
+  invoicing_describe: 需求单/订单/到货/安装/结算/质保 (0.00/100.00/0.00/0.00/0.00/0.00/
+  isDefaultCreate: 0
+  isDeleted: 0
+  mdBrand_id: null
+  model_houses: null
+  name: 订单预付款100%
+  origin_payment_group_id: null
+  origin_payment_iterm_id: 16002
+  radix: 100
+  sort: 50
+  status: ENABLE
+  supply_cycle_of_bulk_goods: null
+  supply_method: null
+  types: SALE
+  unloading_responsibility: null
+  updatedAt: 2024-01-12 10:46:51
+  warranty_period_first_date: null
+  warranty_period_first_str: null
+  warranty_period_first_type: null
