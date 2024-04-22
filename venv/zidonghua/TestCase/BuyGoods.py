@@ -4,6 +4,7 @@ import zidonghua.Common.Requests
 import zidonghua.Interface.Buy_Goods
 import zidonghua.Common.Cookies
 import decimal
+import zidonghua.Conf.Settings
 
 class BuyGoods:
     def __init__(self,mobile,password):
@@ -13,7 +14,8 @@ class BuyGoods:
     def cha_info(self):
         cookies = zidonghua.Common.Cookies.get_cookies(self.mobile)
         response = zidonghua.Common.Requests.HttpUtil(
-            url="https://b2b-mall-uat.test.lcscm.cn/api/partner/b2b/current/info", cookies=cookies).get()
+            url=zidonghua.Conf.Settings.url+ "/api/partner/b2b/current/info",
+            cookies=cookies).get()
         purchaserId = response['result']['enterpriseId']
         return purchaserId
 
@@ -21,8 +23,9 @@ class BuyGoods:
     def Cha_Project(self):
         cookies = zidonghua.Common.Cookies.get_cookies(self.mobile)
         try:
-            response1 = zidonghua.Common.Requests.HttpUtil(url=zidonghua.Interface.Buy_Goods.url1,
-                                  params=zidonghua.Interface.Buy_Goods.params1,cookies=cookies).get()
+            response1 = zidonghua.Common.Requests.HttpUtil(
+                url=zidonghua.Interface.Buy_Goods.api1 + zidonghua.Conf.Settings.url,
+                        params=zidonghua.Interface.Buy_Goods.params1,cookies=cookies).get()
             projectId = response1['result'][1]['id']
             address = response1['result'][1]['address']
             return projectId, address
@@ -34,7 +37,8 @@ class BuyGoods:
         projectId, address = self.Cha_Project()
         zidonghua.Interface.Buy_Goods.params2['path'] = '/items/'+ str(itermId)
         try:
-            response2 = zidonghua.Common.Requests.HttpUtil(url= zidonghua.Interface.Buy_Goods.url2,
+            response2 = zidonghua.Common.Requests.HttpUtil(
+                url= zidonghua.Interface.Buy_Goods.api2+ zidonghua.Conf.Settings.url,
                      params = zidonghua.Interface.Buy_Goods.params2, cookies=cookies).get()
         except Exception as err:
             print("查询商品信息失败"+ err)
@@ -50,7 +54,8 @@ class BuyGoods:
         zidonghua.Interface.Buy_Goods.params3['lines'][0]['categoryId']= (
             response2)['serviceData']['body_6']['_DATA_']['result']['item']['categoryId']
         try:
-            response3 = zidonghua.Common.Requests.HttpUtil(url=zidonghua.Interface.Buy_Goods.url3,
+            response3 = zidonghua.Common.Requests.HttpUtil(
+                url=zidonghua.Interface.Buy_Goods.api3 + zidonghua.Conf.Settings.url,
                          json=zidonghua.Interface.Buy_Goods.params3, cookies=cookies).post()
             return response3.json()
         except Exception as err:
@@ -63,7 +68,8 @@ class BuyGoods:
         zidonghua.Interface.Buy_Goods.params4['divisionIds'] = divisionIds
         zidonghua.Interface.Buy_Goods.params4['projectId'] = projectId
         try:
-            response4 = zidonghua.Common.Requests.HttpUtil(url=zidonghua.Interface.Buy_Goods.url4,
+            response4 = zidonghua.Common.Requests.HttpUtil(
+                url=zidonghua.Interface.Buy_Goods.api4+zidonghua.Conf.Settings.url,
                         params=zidonghua.Interface.Buy_Goods.params4, cookies=cookies).get()
             return response4
         except Exception as err:
@@ -99,7 +105,8 @@ class BuyGoods:
         params5['orderLineList'] = orderLineList1
         try:
             response5 = zidonghua.Common.Requests.HttpUtil(
-                url=zidonghua.Interface.Buy_Goods.url5, json=params5, cookies=cookies).post()
+                url=zidonghua.Interface.Buy_Goods.api5+zidonghua.Conf.Settings.url,
+                json=params5, cookies=cookies).post()
             print(response5.json())
         except Exception as err:
             print("购物车提交订单校验失败" + str(err))
@@ -127,7 +134,8 @@ class BuyGoods:
         params6['orderLineList'] = orderLineList2
         try:
             response6 = zidonghua.Common.Requests.HttpUtil(
-                url=zidonghua.Interface.Buy_Goods.url6, json=params6, cookies=cookies).post()
+                url=zidonghua.Interface.Buy_Goods.api6+zidonghua.Conf.Settings.url,
+                json=params6, cookies=cookies).post()
             return response6.json()
         except Exception as err:
             return ("购物车提交订单失败" + str(err))
@@ -161,7 +169,8 @@ class BuyGoods:
             params9['requireInstall'] = True
             try:
                 response9 = zidonghua.Common.Requests.HttpUtil(
-                    url=zidonghua.Interface.Buy_Goods.url9, json=params9, cookies=cookies).post()
+                    url=zidonghua.Interface.Buy_Goods.api9 +zidonghua.Conf.Settings.url,
+                    json=params9, cookies=cookies).post()
             except Exception as err:
                 print("获取付款条件错误" + str(err))
             if response9.json()['result'][0]['id'] is not None:
@@ -188,7 +197,8 @@ class BuyGoods:
                 orderlinelist.append(dict2)
             params10['orderList'] = orderlinelist
             response10 = zidonghua.Common.Requests.HttpUtil(
-                    url=zidonghua.Interface.Buy_Goods.url10, json=params10, cookies=cookies).post()
+                    url=zidonghua.Interface.Buy_Goods.api10+zidonghua.Conf.Settings.url,
+                json=params10, cookies=cookies).post()
             result10 =response10.json()
             for a in range(len(orderList1)):
                 for k in range(len(result10['result'])):
@@ -247,7 +257,8 @@ class BuyGoods:
             params7['orderList'].append(dict1)
         # print(json.dumps(params7,ensure_ascii=False))
         response7 = zidonghua.Common.Requests.HttpUtil(
-                    url=zidonghua.Interface.Buy_Goods.url7, json=params7, cookies=cookies).post()
+                    url=zidonghua.Interface.Buy_Goods.api7+zidonghua.Conf.Settings.url,
+            json=params7, cookies=cookies).post()
         return response7.json()
         try:
             orderCodes = response7.json()['result']['orderCodes']
@@ -256,7 +267,7 @@ class BuyGoods:
                 zidonghua.Interface.Buy_Goods.params11['projectId'] = projectId
                 cookies = zidonghua.Common.Cookies.get_cookies(mobile)
                 response11 = zidonghua.Common.Requests.HttpUtil(
-                    url= zidonghua.Interface.Buy_Goods.url11,
+                    url= zidonghua.Interface.Buy_Goods.api11+zidonghua.Conf.Settings.url,
                     json=zidonghua.Interface.Buy_Goods.params11, cookies=cookies).post()
             print(response11.json())
         except Exception as e:
