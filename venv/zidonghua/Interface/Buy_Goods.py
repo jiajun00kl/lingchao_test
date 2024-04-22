@@ -1,5 +1,5 @@
-﻿url1 = "https://b2b-mall-uat.test.lcscm.cn/api/partner/admin/project/userId"
-url2 = "https://b2b-mall-uat.test.lcscm.cn/api/design/page/design-data"
+﻿api1 = "/api/partner/admin/project/userId"
+api2 = "/api/design/page/design-data"
 params1 =''
 params2 = {
     'release': 1,
@@ -10,7 +10,7 @@ params2 = {
              '{"partKey":"body"},{"partKey":"footer","scope":"site"}]'
 }
 
-url3 = "https://b2b-mall-uat.test.lcscm.cn/api/trade/cart/add"
+api3 = "/api/trade/cart/add"
 
 params3 = {
     "projectId": 100022,
@@ -28,11 +28,11 @@ params3 = {
     ]
 }
 
-url4 = "https://b2b-mall-uat.test.lcscm.cn/api/trade/cart/query/render"
+api4 = "/api/trade/cart/query/render"
 params4 = {'cartType':'cart_normal','clientType':'PC',
              'divisionIds':'110000,110100,110102','projectId':'100022'}
 
-url5 = "https://b2b-mall-uat.test.lcscm.cn/api/trade/buy/check-render"
+api5 = "/api/trade/buy/check-render"
 
 params5 = {
     "projectId": 100022,
@@ -65,10 +65,10 @@ params6 = {"orderSource":"cart_normal",
           "deviceSource":"PC",
           "buyConfig":{"lineGrouped":True,"multipleCoupon":True},"couponParams":[],"benefitParams":[]}
 
-url6 ="https://b2b-mall-uat.test.lcscm.cn/api/trade/buy/render-order"
+api6 ="/api/trade/buy/render-order"
 
 
-url7 ='https://b2b-mall-uat.test.lcscm.cn/api/trade/order/web/create'
+api7 ='/api/trade/order/web/create'
 
 params7 = {
     "projectId": 100023,
@@ -249,15 +249,15 @@ params7 = {
 }
 
 
-url9 ="https://b2b-mall-uat.test.lcscm.cn/api/item/get-payment-list-new"
+api9 ="/api/item/get-payment-list-new"
 params9 = {"contractId":124054,"requireInstall":True,"categoryIds":[4797,4805,4842,4953,5156]}
 
-url10 ="https://b2b-mall-uat.test.lcscm.cn/api/item/payment/shop-price"
+api10 ="/api/item/payment/shop-price"
 
 params10 = {"contractId":124054,"provinceId":"110000","cityId":"110100",
             "orderList":[{"id":113801700241001,"quality":10}],"mdEnterpriseId":138013,
             "saleRadix":100,"requireInstall":True}
 
-url11 ="https://b2b-mall-uat.test.lcscm.cn/api/trade/order/web/create-pay-order"
+api11 ="/api/trade/order/web/create-pay-order"
 
 params11 = {"orderCodes":["SO20240115000011"],"projectId":100023}
