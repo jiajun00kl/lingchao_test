@@ -276,5 +276,6 @@ class BuyGoods:
 if __name__ == '__main__':
     account = BuyGoods('18178952878','a1234567')
     account.Add_Goods(itermId='210204601003306')
+    # account.Add_Goods(itermId='210204601003306')
     print(account.Submit_Order())
 
