@@ -5,6 +5,9 @@ import zidonghua.Interface.Buy_Goods
 import zidonghua.Common.Cookies
 import decimal
 import zidonghua.Conf.Settings
+from urllib.parse import urlparse   # 使用urllib.parse库中的urlparse函数来解析URL
+
+# zidonghua.Conf.Settings.url =zidonghua.Conf.Settings.dev_url  # 环境切换
 
 class BuyGoods:
     def __init__(self,mobile,password):
@@ -26,8 +29,8 @@ class BuyGoods:
             response1 = zidonghua.Common.Requests.HttpUtil(
                 url=zidonghua.Conf.Settings.url+zidonghua.Interface.Buy_Goods.api1 ,
                         params=zidonghua.Interface.Buy_Goods.params1,cookies=cookies).get()
-            projectId = response1['result'][1]['id']
-            address = response1['result'][1]['address']
+            projectId = response1['result'][3]['id']
+            address = response1['result'][3]['address']
             return projectId, address
         except Exception as err:
             return (f"获取项目失败")
@@ -36,10 +39,14 @@ class BuyGoods:
         cookies = zidonghua.Common.Cookies.get_cookies(self.mobile)
         projectId, address = self.Cha_Project()
         zidonghua.Interface.Buy_Goods.params2['path'] = '/items/'+ str(itermId)
+        parsed_url = urlparse(zidonghua.Conf.Settings.url)
+        zidonghua.Interface.Buy_Goods.params2['host'] = parsed_url.netloc # 获取主机名
         try:
             response2 = zidonghua.Common.Requests.HttpUtil(
-                url= zidonghua.Conf.Settings.url+zidonghua.Interface.Buy_Goods.api2,
-                     params = zidonghua.Interface.Buy_Goods.params2, cookies=cookies).get()
+            url= zidonghua.Conf.Settings.url+zidonghua.Interface.Buy_Goods.api2,
+            params = zidonghua.Interface.Buy_Goods.params2,
+                cookies=cookies).get()
+            print(response2)
         except Exception as err:
             print("查询商品信息失败"+ err)
         zidonghua.Interface.Buy_Goods.params3['projectId'] = projectId
@@ -275,7 +282,7 @@ class BuyGoods:
 
 if __name__ == '__main__':
     account = BuyGoods('18178952878','a1234567')
-    account.Add_Goods(itermId='210204601003306')
-    # account.Add_Goods(itermId='210204601003306')
-    print(account.Submit_Order())
+    account.Add_Goods('210204601003309')
+    account.Add_Goods('110800300376001')
+    # print(account.Submit_Order())
 
