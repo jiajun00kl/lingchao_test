@@ -46,20 +46,19 @@ class BuyGoods:
             url= zidonghua.Conf.Settings.url+zidonghua.Interface.Buy_Goods.api2,
             params = zidonghua.Interface.Buy_Goods.params2,
                 cookies=cookies).get()
-            print(response2)
         except Exception as err:
             print("查询商品信息失败"+ err)
         zidonghua.Interface.Buy_Goods.params3['projectId'] = projectId
-        zidonghua.Interface.Buy_Goods.params3['lines'][0]['itemId'] = (
-            response2)['serviceData']['body_6']['_DATA_']['result']['item']['id']
-        zidonghua.Interface.Buy_Goods.params3['lines'][0]['price'] = (
-            response2)['serviceData']['body_6']['_DATA_']['result']['skuList'][0]['price']
-        zidonghua.Interface.Buy_Goods.params3['lines'][0]['shopId'] = (
-            response2)['serviceData']['body_6']['_DATA_']['result']['item']['sellerId']
-        zidonghua.Interface.Buy_Goods.params3['lines'][0]['skuId'] = (
-            response2)['serviceData']['body_6']['_DATA_']['result']['item']['id']
-        zidonghua.Interface.Buy_Goods.params3['lines'][0]['categoryId']= (
-            response2)['serviceData']['body_6']['_DATA_']['result']['item']['categoryId']
+        zidonghua.Interface.Buy_Goods.params3['lines'][0]['itemId'] = \
+            (response2)['serviceData']['body_6']['_DATA_']['result']['item']['id']
+        zidonghua.Interface.Buy_Goods.params3['lines'][0]['price'] = \
+            (response2)['serviceData']['body_6']['_DATA_']['result']['skuList'][0]['price']
+        zidonghua.Interface.Buy_Goods.params3['lines'][0]['shopId'] = \
+            (response2)['serviceData']['body_6']['_DATA_']['result']['item']['sellerId']
+        zidonghua.Interface.Buy_Goods.params3['lines'][0]['skuId'] = \
+            (response2)['serviceData']['body_6']['_DATA_']['result']['item']['id']
+        zidonghua.Interface.Buy_Goods.params3['lines'][0]['categoryId']= \
+            (response2)['serviceData']['body_6']['_DATA_']['result']['item']['categoryId']
         try:
             response3 = zidonghua.Common.Requests.HttpUtil(
                 url= zidonghua.Conf.Settings.url+zidonghua.Interface.Buy_Goods.api3,
@@ -282,7 +281,8 @@ class BuyGoods:
 
 if __name__ == '__main__':
     account = BuyGoods('18178952878','a1234567')
-    account.Add_Goods('210204601003309')
-    account.Add_Goods('110800300376001')
-    # print(account.Submit_Order())
+    # account.Cha_Project()
+    print(account.Add_Goods('210204601003309'))
+    print(account.Add_Goods('110800300385001'))
+    print(account.Submit_Order())
 
