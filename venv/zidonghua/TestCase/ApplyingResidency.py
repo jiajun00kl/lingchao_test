@@ -7,8 +7,8 @@ data = {
 	"id": "",
 	"enterprisesType": "P",
 	"partnerIdentify": {
-		"unifiedSocialCreditCode": "911101157906543745UUU",
-		"name": "北京泰和佳科技股份有限公司111",
+		"unifiedSocialCreditCode": "911101157906543745",
+		"name": "北京泰和佳科技股份有限公司",
 		"legalRepresentativeName": "袁潇",
 		"registrationInformation": "北京市大兴区黄村镇海鑫北路9号7栋1层",
 		"phone": "010-57795066",
@@ -70,4 +70,4 @@ def Residency(mobile):
 	return response1.json()
 
 if __name__ == '__main__':
-	print(Residency('1350000009'))
+	print(Residency('13500000002'))

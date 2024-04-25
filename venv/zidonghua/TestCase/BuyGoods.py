@@ -7,7 +7,6 @@ import decimal
 import zidonghua.Conf.Settings
 from urllib.parse import urlparse   # 使用urllib.parse库中的urlparse函数来解析URL
 
-# zidonghua.Conf.Settings.url =zidonghua.Conf.Settings.dev_url  # 环境切换
 
 class BuyGoods:
     def __init__(self,mobile,password):
@@ -151,6 +150,7 @@ class BuyGoods:
         cookies = zidonghua.Common.Cookies.get_cookies(self.mobile)
         purchaserId = self.cha_info()
         result = self.Cart_Submit()['result']
+        print(result['orderList'][i]['salesContract'])  # 合同信息
         projectId, address = self.Cha_Project()
         params7 = zidonghua.Interface.Buy_Goods.params7
         params7['projectId'] = result['projectId']
@@ -282,7 +282,7 @@ class BuyGoods:
 if __name__ == '__main__':
     account = BuyGoods('18178952878','a1234567')
     # account.Cha_Project()
-    print(account.Add_Goods('210204601003309'))
-    print(account.Add_Goods('110800300385001'))
+    # print(account.Add_Goods('210204601003309'))
+    # print(account.Add_Goods('110800300385001'))
     print(account.Submit_Order())
 

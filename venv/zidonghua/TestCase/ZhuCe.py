@@ -12,5 +12,5 @@ def zhuce(mobile):
     return response.json()
 
 if __name__ == '__main__':
-    print(zhuce('13500000009'))
+    print(zhuce('13500000002'))
 
