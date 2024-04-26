@@ -2,7 +2,7 @@
 import pymysql
 from pymysql import MySQLError
 import datetime
-import time
+import time,json
 
 def my_conn(sql, params=None):
     try:
@@ -141,38 +141,179 @@ class order():
         enterprise = self.sup_mobile()
         cookies = self.sup_login(mobile=enterprise[0]['phone'])
         so_order, po_order = self.parana_order()
-        url1 =("https://staging-gateway.test.lcscm.cn/zhonghai/master-data"
-           "/master-data-admin/1005691/api/trantor/data-source")
-        data1 ={"frontendContext":{},"singleResult":False,"targetModel":"master_data_server_MDBusinessContact",
-            "sourceModel":"master_data_server_MDBusinessContact",
-            "dataSource":{"actionKey":"master_data_server_MDBusinessContact_supplier_business_contact_list"},
-            "result":{"fields":[{"fieldName":"id"},{"fieldName":"mdEnterprise",
-            "fields":[{"fieldName":"id"},{"fieldName":"name"}]},{"fieldName":"contact",
-            "fields":[{"fieldName":"id"},{"fieldName":"username"},
-             {"fieldName":"nickname"},{"fieldName":"mobile"}]},{"fieldName":"isDefaultDesc"}]},
-            "paging":{"no":1,"size":10},"order":{"by":"updatedAt","isAsc":False}}
-        response1 = requests.post(url=url1,json=data1, cookies=cookies)
-        try:
-            response_data = response1.json()
-            res_data = response_data.get('res', {}).get('data', [])
-            if res_data:
-                contact = res_data[0].get('contact')
-            else:
-                contact = None
-        except (ValueError, KeyError):
-            contact = None
+        url =("https://staging-gateway.test.lcscm.cn/zhonghai/trade-center"
+              "/order-admin-center/1004708/api/trantor/data-source")
+        data ={
+	"frontendContext": {
+
+	},
+	"singleResult": False,
+	"targetModel": "order_OrderPO",
+	"sourceModel": "order_OrderPO",
+	"searchValues": {
+		"code": {
+			"type": "One",
+			"fullMatch": True,
+			"value": po_order['code']
+		}
+	},
+	"dataSource": {
+		"actionKey": "order_OrderPO_order_supplier_orders_to_list"
+	},
+	"result": {
+		"fields": [
+			{
+				"fieldName": "code"
+			},
+			{
+				"fieldName": "title"
+			},
+			{
+				"fieldName": "status"
+			},
+			{
+				"fieldName": "settleStatus"
+			},
+			{
+				"fieldName": "qualityAssuranceStatus"
+			},
+			{
+				"fieldName": "projectReceiverName"
+			},
+			{
+				"fieldName": "contractName"
+			},
+			{
+				"fieldName": "protocolName"
+			},
+			{
+				"fieldName": "categoryNames"
+			},
+			{
+				"fieldName": "project",
+				"fields": [
+					{
+						"fieldName": "id"
+					},
+					{
+						"fieldName": "name"
+					}
+				]
+			},
+			{
+				"fieldName": "purchaserName"
+			},
+			{
+				"fieldName": "dealerName"
+			},
+			{
+				"fieldName": "brandOwnerName"
+			},
+			{
+				"fieldName": "signStatus"
+			},
+			{
+				"fieldName": "orderDate"
+			},
+			{
+				"fieldName": "takeOrderDate"
+			},
+			{
+				"fieldName": "totalAmount"
+			},
+			{
+				"fieldName": "getGoodsAmount"
+			},
+			{
+				"fieldName": "deliveryAmount"
+			},
+			{
+				"fieldName": "reverseAmount"
+			},
+			{
+				"fieldName": "settledAmount"
+			},
+			{
+				"fieldName": "orderCreateType"
+			},
+			{
+				"fieldName": "payType"
+			},
+			{
+				"fieldName": "contract",
+				"fields": [
+					{
+						"fieldName": "id"
+					},
+					{
+						"fieldName": "name"
+					}
+				]
+			},
+			{
+				"fieldName": "id"
+			},
+			{
+				"fieldName": "supplier",
+				"fields": [
+					{
+						"fieldName": "id"
+					},
+					{
+						"fieldName": "name"
+					}
+				]
+			},
+			{
+				"fieldName": "brandOwner",
+				"fields": [
+					{
+						"fieldName": "id"
+					},
+					{
+						"fieldName": "name"
+					}
+				]
+			},
+			{
+				"fieldName": "assignAble"
+			}
+		]
+	},
+	"paging": {
+		"no": 1,
+		"size": 200
+	},
+	"order": {
+		"by": "createdAt",
+		"isAsc": False
+	}
+}
+        response = requests.post(url=url, json=data,cookies=cookies)
+        result = response.json()['res']['data']
+        url1 =("https://staging-gateway.test.lcscm.cn/zhonghai"
+               "/trade-center/order-admin-center/1004708/api/trantor/action/exe")
+        data1 ={
+    "frontendContext": {},
+    "actionKey": "order_GetGoodsOrderPO_GetGoodsServerAction::defaultContact",
+    "context": {
+        "env": {
+            "mdEnterpriseId": enterprise[0]['id']
+        },
+        "record": [
+            result
+        ],
+        "modelKey": "order_GetGoodsOrderPO"
+    }
+}
+        response1 = requests.post(url=url1, json=data1, cookies=cookies)
         url2 = ('https://staging-gateway.test.lcscm.cn/zhonghai/trade-center/'
            'order-admin-center/1004708/api/trantor/action/exe')
         supplier_data = {
         "id": so_order['supplier'],
         "website": enterprise[0]['website']
     }
-        supplier_contact_data = {
-        "__trantorExtendFields": {},
-        "id": contact['id'],
-        "mobile": contact['mobile'],
-        "nickname": contact['nickname']
-    }
+        supplier_contact_data = response1.json()['res']['data']['businessContact']
         data2 = {
         "frontendContext": {},
         "actionKey": "order_OrderPO_OrderAction::orderConfirm",
@@ -4944,7 +5085,7 @@ def purchase_settlement(so_code):
 if __name__ == '__main__':
     # goods_rejected('SO20240222000007001')
     # print(reverseItem('SO20240222000007001','SO20240222000007001002'))
-    print(purchase_settlement('SO20240221000005'))
+    print(order('SO20240415000001').SupplierAcceptanceOrder())
 
 
 
