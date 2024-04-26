@@ -5085,7 +5085,7 @@ def purchase_settlement(so_code):
 if __name__ == '__main__':
     # goods_rejected('SO20240222000007001')
     # print(reverseItem('SO20240222000007001','SO20240222000007001002'))
-    print(order('SO20240415000001').SupplierAcceptanceOrder())
+    order('SO20240412000011').SupplierAcceptanceOrder()
 
 
 
