@@ -33,6 +33,6 @@ def SupplierAcceptanceOrder(mobile,so_code):   # 供应商接单
         return ("该订单为'{}'，无需操作").format(po_order['status'])
 
 if __name__ == '__main__':
-    print(SupplierAcceptanceOrder('18178952878','SO20240108000003'))
+    print(SupplierAcceptanceOrder('18178952878','SO20240428000007'))
 
 
