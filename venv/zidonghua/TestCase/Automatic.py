@@ -9,6 +9,7 @@ import zidonghua.TestCase.OaApprover
 import zidonghua.TestCase.OrderAccept
 import zidonghua.TestCase.InstallAccept
 import time
+import zidonghua.TestCase.BuyGoods
 
 
 mobile = '18178952878'
@@ -22,7 +23,12 @@ def automatic():
     transaction.purse_write(mobile,proiectname)
     transaction.goods_write(mobile1,item_code)
     print('---------开始下单---------')
-    order = zidonghua.TestCase.PurchaseGoods.purchase_goods(mobile,proiectname,item_code)
+    account = zidonghua.TestCase.BuyGoods.BuyGoods('18178952878', 'a1234567')
+    print('---------商品加入购物车---------')
+    account.Add_Goods('210204601003309')
+    # (account.Add_Goods('110800300385001'))
+    # account.Cha_Project()
+    # print(account.Submit_Order())
     so_code = order['result']['orderCodes'][0]
     if so_code is None:
         print("下单失败")
