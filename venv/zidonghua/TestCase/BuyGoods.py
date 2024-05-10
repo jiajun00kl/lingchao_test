@@ -16,8 +16,8 @@ class BuyGoods:
     def cha_info(self):
         cookies = zidonghua.Common.Cookies.get_cookies(self.mobile)
         response = zidonghua.Common.Requests.HttpUtil(
-            url=zidonghua.Conf.Settings.url+ "/api/partner/b2b/current/info",
-            cookies=cookies).get()
+            url=zidonghua.Conf.Settings.url+ "",
+            cookies=cookies).get()/api/partner/b2b/current/info
         purchaserId = response['result']['enterpriseId']
         return purchaserId
 
@@ -166,7 +166,7 @@ class BuyGoods:
         params7['projectContactName'] = result['projectContact'][0]['contactName']
         params7['projectContactPhone'] = result['projectContact'][0]['contactPhone']
         params7['orderContactId'] = result['orderUserId']
-        params7['salesContractId'] = result['salesContract'][0]['saleId']
+        params7['salesContractId'] = result['salesContract'][0]['saleId'] #选择合同
         params7['orderList'] = []
         for i in range(len(result['orderList'])):
             params9 = zidonghua.Interface.Buy_Goods.params9
