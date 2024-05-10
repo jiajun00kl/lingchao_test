@@ -34,7 +34,7 @@ class BuyGoods:
         except Exception as err:
             return (f"获取项目失败")
 
-    def Add_Goods(self,itermId):
+    def Add_Goods(self,itermId,quantity):
         cookies = zidonghua.Common.Cookies.get_cookies(self.mobile)
         projectId, address = self.Cha_Project()
         zidonghua.Interface.Buy_Goods.params2['path'] = '/items/'+ str(itermId)
@@ -58,6 +58,7 @@ class BuyGoods:
             (response2)['serviceData']['body_6']['_DATA_']['result']['item']['id']
         zidonghua.Interface.Buy_Goods.params3['lines'][0]['categoryId']= \
             (response2)['serviceData']['body_6']['_DATA_']['result']['item']['categoryId']
+        zidonghua.Interface.Buy_Goods.params3['lines'][0]['quantity'] = quantity
         try:
             response3 = zidonghua.Common.Requests.HttpUtil(
                 url= zidonghua.Conf.Settings.url+zidonghua.Interface.Buy_Goods.api3,
@@ -282,7 +283,7 @@ class BuyGoods:
 if __name__ == '__main__':
     account = BuyGoods('18178952878','a1234567')
     # account.Cha_Project()
-    # print(account.Add_Goods('210204601003309'))
-    # print(account.Add_Goods('110800300385001'))
-    print(account.Submit_Order())
+    # print(account.Add_Goods('210204601003309',5))
+    # print(account.Add_Goods('110800300385001',5))
+    # print(account.Submit_Order())
 
