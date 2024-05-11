@@ -18,17 +18,13 @@ mobile1 = '18178952877'
 item_code ='210204601003301'
 
 def automatic():
-    transaction = zidonghua.Common.Project_Goods.transaction()
-    transaction.account_write(mobile)
-    transaction.purse_write(mobile,proiectname)
-    transaction.goods_write(mobile1,item_code)
-    print('---------开始下单---------')
     account = zidonghua.TestCase.BuyGoods.BuyGoods('18178952878', 'a1234567')
     print('---------商品加入购物车---------')
     account.Add_Goods('210204601003309',5)
     # (account.Add_Goods('110800300385001'))
     # account.Cha_Project()
-    # print(account.Submit_Order())
+    print('---------开始下单---------')
+    account.Submit_Order()
     so_code = order['result']['orderCodes'][0]
     if so_code is None:
         print("下单失败")
