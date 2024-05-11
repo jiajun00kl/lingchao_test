@@ -25,11 +25,9 @@ def automatic():
     # account.Cha_Project()
     print('---------开始下单---------')
     account.Submit_Order()
-    so_code = order['result']['orderCodes'][0]
+    so_code = account.Submit_Order()['result']['orderCodes'][0]
     if so_code is None:
         print("下单失败")
-    else:
-        print(order)
     time.sleep(20)
     print('---------开始接单---------')
     jiedan = zidonghua.TestCase.SupplierAcceptanceOrder.SupplierAcceptanceOrder(mobile1,so_code)
