@@ -25,7 +25,7 @@ def automatic():
     print('---------开始下单---------')
     account = zidonghua.TestCase.BuyGoods.BuyGoods('18178952878', 'a1234567')
     print('---------商品加入购物车---------')
-    account.Add_Goods('210204601003309')
+    account.Add_Goods('210204601003309',5)
     # (account.Add_Goods('110800300385001'))
     # account.Cha_Project()
     # print(account.Submit_Order())
