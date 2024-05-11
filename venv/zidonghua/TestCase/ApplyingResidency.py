@@ -1,8 +1,9 @@
 ﻿import json
 import zidonghua.Common.Requests
 import zidonghua.Common.Cookies
+import zidonghua.Conf.Settings
 
-url ='https://b2b-mall-uat.test.lcscm.cn/api/partner/b2b/all/businesses/create'
+api ='/api/partner/b2b/all/businesses/create'
 data = {
 	"id": "",
 	"enterprisesType": "P",
@@ -65,7 +66,7 @@ data = {
 def Residency(mobile):
 	cookies = zidonghua.Common.Cookies.get_cookies(mobile)
 	response1 = zidonghua.Common.Requests.HttpUtil(
-		url=url,
+		url=api+zidonghua.Conf.Settings.url,
 		json=data, cookies=cookies).post()
 	return response1.json()
 
