@@ -66,9 +66,10 @@ data = {
 def Residency(mobile):
 	cookies = zidonghua.Common.Cookies.get_cookies(mobile)
 	response1 = zidonghua.Common.Requests.HttpUtil(
-		url=api+zidonghua.Conf.Settings.url,
+		url=zidonghua.Conf.Settings.url+api,
 		json=data, cookies=cookies).post()
 	return response1.json()
 
 if __name__ == '__main__':
 	print(Residency('13500000002'))
+
