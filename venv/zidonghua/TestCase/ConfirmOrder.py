@@ -19,7 +19,7 @@ def confirm_orders(mobile,so_code):  #供应商确认订单
     return response1.json()
 
 if __name__ == '__main__':
- print(confirm_orders('18178952877','SO20240429000002'))
+ print(confirm_orders('18178952877','SO20240525000003'))
     
     
     

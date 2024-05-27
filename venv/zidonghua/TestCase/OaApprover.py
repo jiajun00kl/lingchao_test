@@ -16,5 +16,5 @@ def oa_approver(so_code):   # 发货OA审批
         json = zidonghua.Interface.Oa_Approve.data ).post()
     return response.json()
 
-
-# print(oa_approver('SO20240110000004'))
+if __name__ =='__main__':
+    print(oa_approver('SO20240527000007'))

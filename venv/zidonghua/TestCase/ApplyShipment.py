@@ -45,4 +45,4 @@ def apply_shipment(mobile,so_code):   # 供应商申请发货
         url=zidonghua.Interface.Apply_Shipment.url2,
         json=data, cookies=cookies).post()
     return response1.json()
-print(apply_shipment('18178952878','SO20240326000010'))
+print(apply_shipment('18178952878','SO20240525000003'))

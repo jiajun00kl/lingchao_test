@@ -28,8 +28,8 @@ class BuyGoods:
             response1 = zidonghua.Common.Requests.HttpUtil(
                 url=zidonghua.Conf.Settings.url+zidonghua.Interface.Buy_Goods.api1 ,
                         params=zidonghua.Interface.Buy_Goods.params1,cookies=cookies).get()
-            projectId = response1['result'][3]['id']
-            address = response1['result'][3]['address']
+            projectId = response1['result'][4]['id']
+            address = response1['result'][4]['address']
             return projectId, address
         except Exception as err:
             return (f"获取项目失败")
@@ -281,8 +281,9 @@ class BuyGoods:
             print(e)
 
 if __name__ == '__main__':
+    # zidonghua.Conf.Settings.url =zidonghua.Conf.Settings.dev_url
     account = BuyGoods('18178952878','a1234567')
-    # account.Cha_Project()
+    print(account.Cha_Project())
     # print(account.Add_Goods('210204601003309',5))
     # print(account.Add_Goods('110800300385001',5))
     # print(account.Submit_Order())

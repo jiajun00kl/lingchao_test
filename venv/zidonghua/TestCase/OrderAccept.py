@@ -64,5 +64,5 @@ def order_accept(mobile,so_code): # 订单到货验收
         url=zidonghua.Interface.Order_Accept.url2,
         json= data1, cookies=cookies).post()
     return response2.json()
-print(order_accept('18178952878','SO20240326000009'))
+print(order_accept('18178952878','SO20240525000003'))
 

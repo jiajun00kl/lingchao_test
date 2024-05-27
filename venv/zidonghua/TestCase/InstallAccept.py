@@ -40,4 +40,4 @@ def InstallAccept(mobile,so_code):
         json = zidonghua.Interface.Install_Accept.data3, cookies=cookies).post()
     return response2.json()
 
-print(InstallAccept('18178952878','SO20240110000003'))
+print(InstallAccept('18178952878','SO20240525000003'))

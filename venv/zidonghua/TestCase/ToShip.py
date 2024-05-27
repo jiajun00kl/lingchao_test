@@ -32,4 +32,4 @@ def to_ship(mobile,so_code): # 去审核发货
         json = zidonghua.Interface.To_Ship.data2 , cookies = cookies).post()
     return response.json()
 
-print(to_ship('18520611771','SO20240110000004'))
+print(to_ship('18520611771','SO20240527000007'))

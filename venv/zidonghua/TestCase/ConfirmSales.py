@@ -77,4 +77,4 @@ def TestConfirmSales(mobile,so_code):  # 确认对账单
     return response11.json()
 
 if __name__ == '__main__':
-    print(TestConfirmSales('18178952878','SO20240228000001'))
+    print(TestConfirmSales('18178952878','SO20240527000007'))
