@@ -17,7 +17,7 @@ class BuyGoods:
         cookies = zidonghua.Common.Cookies.get_cookies(self.mobile)
         response = zidonghua.Common.Requests.HttpUtil(
             url=zidonghua.Conf.Settings.url+ "",
-            cookies=cookies).get()/api/partner/b2b/current/info
+            cookies=cookies).get()
         purchaserId = response['result']['enterpriseId']
         return purchaserId
 
