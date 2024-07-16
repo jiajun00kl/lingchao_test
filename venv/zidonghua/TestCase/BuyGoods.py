@@ -287,4 +287,3 @@ if __name__ == '__main__':
     # print(account.Add_Goods('210204601003309',5))
     # print(account.Add_Goods('110800300385001',5))
     # print(account.Submit_Order())
-

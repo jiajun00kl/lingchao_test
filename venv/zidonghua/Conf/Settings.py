@@ -4,5 +4,6 @@ url = uat_url
 
 uat_url1 ='https://staging-gateway.test.lcscm.cn'
 dev_url1 = 'https://dev-gateway.test.lcscm.cn'
+url1 = uat_url1
 
 
