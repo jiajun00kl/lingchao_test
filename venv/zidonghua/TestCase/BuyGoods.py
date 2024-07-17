@@ -42,30 +42,34 @@ class BuyGoods:
         zidonghua.Interface.Buy_Goods.params2['host'] = parsed_url.netloc # 获取主机名
         try:
             response2 = zidonghua.Common.Requests.HttpUtil(
-            url= zidonghua.Conf.Settings.url+zidonghua.Interface.Buy_Goods.api2,
-            params = zidonghua.Interface.Buy_Goods.params2,
+                url=zidonghua.Conf.Settings.url + zidonghua.Interface.Buy_Goods.api2,
+                params=zidonghua.Interface.Buy_Goods.params2,
                 cookies=cookies).get()
-        except Exception as err:
-            print("查询商品信息失败"+ err)
-        zidonghua.Interface.Buy_Goods.params3['projectId'] = projectId
-        zidonghua.Interface.Buy_Goods.params3['lines'][0]['itemId'] = \
-            (response2)['serviceData']['body_6']['_DATA_']['result']['item']['id']
-        zidonghua.Interface.Buy_Goods.params3['lines'][0]['price'] = \
-            (response2)['serviceData']['body_6']['_DATA_']['result']['skuList'][0]['price']
-        zidonghua.Interface.Buy_Goods.params3['lines'][0]['shopId'] = \
-            (response2)['serviceData']['body_6']['_DATA_']['result']['item']['sellerId']
-        zidonghua.Interface.Buy_Goods.params3['lines'][0]['skuId'] = \
-            (response2)['serviceData']['body_6']['_DATA_']['result']['item']['id']
-        zidonghua.Interface.Buy_Goods.params3['lines'][0]['categoryId']= \
-            (response2)['serviceData']['body_6']['_DATA_']['result']['item']['categoryId']
-        zidonghua.Interface.Buy_Goods.params3['lines'][0]['quantity'] = quantity
-        try:
-            response3 = zidonghua.Common.Requests.HttpUtil(
-                url= zidonghua.Conf.Settings.url+zidonghua.Interface.Buy_Goods.api3,
-                         json=zidonghua.Interface.Buy_Goods.params3, cookies=cookies).post()
-            return response3.json()
-        except Exception as err:
-            return ("商品加入购物车失败")
+            if response2['serviceData']['body_6']['_DATA_']['result']:
+                zidonghua.Interface.Buy_Goods.params3['projectId'] = projectId
+                zidonghua.Interface.Buy_Goods.params3['lines'][0]['itemId'] = \
+                    (response2)['serviceData']['body_6']['_DATA_']['result']['item']['id']
+                zidonghua.Interface.Buy_Goods.params3['lines'][0]['price'] = \
+                    (response2)['serviceData']['body_6']['_DATA_']['result']['skuList'][0]['price']
+                zidonghua.Interface.Buy_Goods.params3['lines'][0]['shopId'] = \
+                    (response2)['serviceData']['body_6']['_DATA_']['result']['item']['sellerId']
+                zidonghua.Interface.Buy_Goods.params3['lines'][0]['skuId'] = \
+                    (response2)['serviceData']['body_6']['_DATA_']['result']['item']['id']
+                zidonghua.Interface.Buy_Goods.params3['lines'][0]['categoryId'] = \
+                    (response2)['serviceData']['body_6']['_DATA_']['result']['item']['categoryId']
+                zidonghua.Interface.Buy_Goods.params3['lines'][0]['quantity'] = quantity
+                try:
+                    response3 = zidonghua.Common.Requests.HttpUtil(
+                        url=zidonghua.Conf.Settings.url + zidonghua.Interface.Buy_Goods.api3,
+                        json=zidonghua.Interface.Buy_Goods.params3, cookies=cookies).post()
+                    return response3.json()
+                except Exception as err:
+                    return ("商品加入购物车失败")
+            else:
+                    return ("查询商品信息失败: {} ".format(err))
+        except Exception as e:
+            return e
+
 
     def Cha_Cart(self):
         cookies = zidonghua.Common.Cookies.get_cookies(self.mobile)
@@ -283,7 +287,6 @@ class BuyGoods:
 if __name__ == '__main__':
     # zidonghua.Conf.Settings.url =zidonghua.Conf.Settings.dev_url
     account = BuyGoods('18178952878','a1234567')
-    print(account.Cha_Project())
     # print(account.Add_Goods('210204601003309',5))
     # print(account.Add_Goods('110800300385001',5))
     # print(account.Submit_Order())
