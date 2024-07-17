@@ -261,3 +261,4 @@ params10 = {"contractId":124054,"provinceId":"110000","cityId":"110100",
 api11 ="/api/trade/order/web/create-pay-order"
 
 params11 = {"orderCodes":["SO20240115000011"],"projectId":100023}
+api8 ="/api/partner/b2b/current/info"
