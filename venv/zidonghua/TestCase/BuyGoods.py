@@ -16,7 +16,7 @@ class BuyGoods:
     def cha_info(self):
         cookies = zidonghua.Common.Cookies.get_cookies(self.mobile)
         response = zidonghua.Common.Requests.HttpUtil(
-            url=zidonghua.Conf.Settings.url+ "",
+            url=zidonghua.Conf.Settings.url+ zidonghua.Interface.Buy_Goods.api8,
             cookies=cookies).get()
         purchaserId = response['result']['enterpriseId']
         return purchaserId
@@ -287,6 +287,7 @@ class BuyGoods:
 if __name__ == '__main__':
     # zidonghua.Conf.Settings.url =zidonghua.Conf.Settings.dev_url
     account = BuyGoods('18178952878','a1234567')
+    print(account.cha_info())
     # print(account.Add_Goods('210204601003309',5))
     # print(account.Add_Goods('110800300385001',5))
     # print(account.Submit_Order())
