@@ -131,6 +131,7 @@ params7 = {
         "needInvoice": True,
         "isRequired": True
     },
+    "orderIsReport": False,
     "projectContactName": "test熊",
     "projectContactPhone": "18178952878",
     "salesContractId": 124057,
@@ -139,6 +140,7 @@ params7 = {
         {
             "supplierId": 138017,
             "installation": False,
+            "installOption": "",
             "contactName": None,
             "contactId": None,
             "contactPhone": None,

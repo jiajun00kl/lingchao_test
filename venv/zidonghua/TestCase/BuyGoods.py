@@ -21,18 +21,30 @@ class BuyGoods:
         purchaserId = response['result']['enterpriseId']
         return purchaserId
 
-
-    def Cha_Project(self):
+    def Select_Project(self):
         cookies = zidonghua.Common.Cookies.get_cookies(self.mobile)
         try:
             response1 = zidonghua.Common.Requests.HttpUtil(
-                url=zidonghua.Conf.Settings.url+zidonghua.Interface.Buy_Goods.api1 ,
-                        params=zidonghua.Interface.Buy_Goods.params1,cookies=cookies).get()
-            projectId = response1['result'][4]['id']
-            address = response1['result'][4]['address']
-            return projectId, address
+                url=zidonghua.Conf.Settings.url + zidonghua.Interface.Buy_Goods.api1,
+                params=zidonghua.Interface.Buy_Goods.params1, cookies=cookies).get()
+            projects = []
+            for i in range(len(response1['result'])):
+                project = {}
+                project['projectId'] = response1['result'][i]['id']
+                project['projectname'] = response1['result'][i]['name']
+                project['projectaddress'] = response1['result'][i]['address']
+                projects.append(project)
+            return projects
         except Exception as err:
             return (f"获取项目失败")
+
+    def Cha_Project(self,projectname='0529合同测试新建项目001@湖北家家有限公司#深圳非CRM同步的'):
+        projects = self.Select_Project()
+        for project in  projects:
+            if project['projectname']==projectname:
+                return project['projectId'],project['projectaddress']
+        return project['projectId'], project['projectaddress']
+
 
     def Add_Goods(self,itermId,quantity):
         cookies = zidonghua.Common.Cookies.get_cookies(self.mobile)
@@ -117,7 +129,7 @@ class BuyGoods:
             response5 = zidonghua.Common.Requests.HttpUtil(
                 url=zidonghua.Conf.Settings.url+zidonghua.Interface.Buy_Goods.api5,
                 json=params5, cookies=cookies).post()
-            print(response5.json())
+            response5.raise_for_status()
         except Exception as err:
             print("购物车提交订单校验失败" + str(err))
         params6 = zidonghua.Interface.Buy_Goods.params6
@@ -155,7 +167,6 @@ class BuyGoods:
         cookies = zidonghua.Common.Cookies.get_cookies(self.mobile)
         purchaserId = self.cha_info()
         result = self.Cart_Submit()['result']
-        print(result['orderList'][i]['salesContract'])  # 合同信息
         projectId, address = self.Cha_Project()
         params7 = zidonghua.Interface.Buy_Goods.params7
         params7['projectId'] = result['projectId']
@@ -185,10 +196,9 @@ class BuyGoods:
             except Exception as err:
                 print("获取付款条件错误" + str(err))
             if response9.json()['result'][0]['id'] is not None:
-                print("付款条件id为："+ str(response9.json()['result'][0]['id']))
+                print("付款条件名称："+ str(response9.json()['result'][0]['name']))
             else:
                 print('没有付款条件')
-
 
         for i in range(len(result['orderList'])):
             params10 = zidonghua.Interface.Buy_Goods.params10
@@ -197,7 +207,7 @@ class BuyGoods:
             params10['contractId'] = result['orderList'][i]['salesContract'][0]['saleId']
             params10['provinceId'] = address['province']['id']
             params10['cityId'] =address['city']['id']
-            params10['requireInstall'] = False
+            params10['requireInstall'] = True
             params10['mdEnterpriseId'] =  purchaserId
             orderList1 = result['orderList'][i]['activityOrderList'][0]['orderLineGroups'][0]['orderLineList']
             orderlinelist =[]
@@ -220,7 +230,7 @@ class BuyGoods:
                         orderList1[a]['purDiscountRate'] = result10['result'][k]['purDiscountRate']
                         orderList1[a]['saleRadix'] = result10['result'][k]['saleRadix']
                         orderList1[a]['taxPriceMoney'] = result10['result'][k]['taxPriceMoney']
-                        orderList1[a]['taxPrice'] = result10['result'][k]['taxPrice']
+                        orderList1[a]['taxPrice'] = result10['result'][k]['taxPriceMoney']
                         orderList1[a]['priceExclusive'] = result10['result'][k]['priceExclusive']
                         orderList1[a]['totalPrice'] = result10['result'][k]['totalPrice']
                         orderList1[a]['totalPriceExclusive'] = result10['result'][k]['totalPriceExclusive']
@@ -267,10 +277,14 @@ class BuyGoods:
                 dict1['totalAmountPriceExclusive'] += orderList1[i]['totalPriceExclusive']
             params7['orderList'].append(dict1)
         # print(json.dumps(params7,ensure_ascii=False))
-        response7 = zidonghua.Common.Requests.HttpUtil(
+        try:
+            response7 = zidonghua.Common.Requests.HttpUtil(
                     url=zidonghua.Conf.Settings.url+zidonghua.Interface.Buy_Goods.api7,
-            json=params7, cookies=cookies).post()
-        return response7.json()
+                json=params7, cookies=cookies).post()
+            response7.raise_for_status()
+            return response7.json()
+        except Exception as e:
+            print(e)
         try:
             orderCodes = response7.json()['result']['orderCodes']
             if params7['paymentType'] != 'account':
@@ -287,7 +301,9 @@ class BuyGoods:
 if __name__ == '__main__':
     # zidonghua.Conf.Settings.url =zidonghua.Conf.Settings.dev_url
     account = BuyGoods('18178952878','a1234567')
-    print(account.cha_info())
+    # print(account.Select_Project())
+    # print(account.Cha_Project(projectname='0529合同测试新建项目001@湖北家家有限公司#深圳非CRM同步的'))
     # print(account.Add_Goods('210204601003309',5))
     # print(account.Add_Goods('110800300385001',5))
-    # print(account.Submit_Order())
+    print(account.Submit_Order())
+
