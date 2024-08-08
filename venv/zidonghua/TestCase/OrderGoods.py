@@ -22,5 +22,5 @@ def order_goods(mobile,so_code):   # 采购商订货
     return response1.json()
 
 if __name__ == '__main__':
-    print(order_goods('18178952878','SO20240525000003'))
+    print(order_goods('18178952875','SO20240731000017'))
 

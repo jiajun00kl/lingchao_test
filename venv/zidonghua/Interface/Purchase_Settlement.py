@@ -1,5 +1,15 @@
+'''
+
+url1 =("https://dev-gateway.test.lcscm.cn"
+       "/zhonghai/settlement-center/settlement-admin/1005737/api/trantor/action/exe")
+url2 =("https://dev-gateway.test.lcscm.cn"
+       "/zhonghai/settlement-center/settlement-admin/1005737/api/trantor/data-source")
+'''
+
+
 url1 = ("https://staging-gateway.test.lcscm.cn"
        "/zhonghai/settlement-center/settlement-admin/1004893/api/trantor/action/exe")
+
 
 data1 = {
     "frontendContext": {},

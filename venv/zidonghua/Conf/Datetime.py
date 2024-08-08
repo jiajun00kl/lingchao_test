@@ -1,6 +1,8 @@
 ﻿import time
 import uuid
 import datetime
+import random
+import string
 
 def timestamp():
     timestamp = int(time.time()) * 1000
@@ -34,4 +36,34 @@ def Uuid():
     uid1 = uuid.uuid4()
     uid2 = uuid.uuid1()
     return uid1
+
+
+def generate_random_n_digit_integer(n):
+    # 确保n是一个正整数
+    if n <= 0:
+        raise ValueError("n must be a positive integer")
+
+        # 计算起始值和结束值
+    # 起始值是1后面跟n-1个0（即10**(n-1)）
+    # 结束值是10后面跟n个0再减去1（即10**n - 1）
+    start = 10 ** (n - 1)
+    end = 10 ** n - 1
+
+    # 生成随机整数
+    random_int = random.randint(start, end)
+    return random_int
+
+
+
+def randomstring():
+    pinyin_initials = 'bpmfdtnlgkhjqxzhchshrzcsyw'
+    characters = (
+        #    string.ascii_letters +
+            string.digits +
+            pinyin_initials
+         #   + string.punctuation.replace("'", "").replace('"','')
+    )
+    random_string = ''.join(random.choice(characters) for i in range(10))
+    return random_string
+
 

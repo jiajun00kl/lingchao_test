@@ -17,4 +17,4 @@ def oa_approver(so_code):   # 发货OA审批
     return response.json()
 
 if __name__ =='__main__':
-    print(oa_approver('SO20240527000007'))
+    print(oa_approver('SO20240731000017'))

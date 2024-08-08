@@ -10,6 +10,7 @@ def get_cookies(identify):
         json=zidonghua.Interface.Login.data).post()
     cookies = response.cookies.get_dict()
     return cookies
+
 def login_cookies(mobile):
     zidonghua.Interface.Login.data1['mobile'] = mobile
     response = zidonghua.Common.Requests.HttpUtil(
@@ -25,6 +26,7 @@ def login(identify,password):
         url=zidonghua.Conf.Settings.url + zidonghua.Interface.Login.api,
         json=zidonghua.Interface.Login.data).post()
     return response.json()
+
 
 
 

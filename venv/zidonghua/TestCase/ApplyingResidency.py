@@ -67,4 +67,4 @@ def ship_residency():
 	return response3.json()
 
 if __name__ == '__main__':
-	print(Residency('13500000004','913701020611948817'))
+	print(Residency('13500000003','913100007416482930'))

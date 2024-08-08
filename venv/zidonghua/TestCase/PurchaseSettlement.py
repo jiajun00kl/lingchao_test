@@ -119,7 +119,7 @@ def purchase_settlement(mobile,so_code):   # 采购结算，生成对账单并�
 
 
 if __name__ == '__main__':
-    print(purchase_settlement('18178952878','SO20240124000007'))
+    print(purchase_settlement('18178952878','SO20231225000001'))
 
 
 
