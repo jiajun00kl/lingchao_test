@@ -1,0 +1,13 @@
+﻿dev:
+  MYSQL_HOST: '172.98.96.209'
+  MYSQL_PORT:  '3306'
+  MYSQL_USERNAME: 'mysql'
+  MYSQL_PASSWORD: 'R02WQrpEfhu95Wc3'
+  DB :  'trantor_workspace_dev'
+
+uat:
+  DB :  'trantor_workspace_staging'
+  MYSQL_HOST: '172.99.227.53'
+  MYSQL_PORT: '3306'
+  MYSQL_USERNAME: 'mysql'
+  MYSQL_PASSWORD: '77oELIFI67abMArf' 
